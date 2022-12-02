@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- 定义样式-->
+    <style>
+        .c1{
+            color: red;
+        }
+        .c2{
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>用户登录</h1>
+    <h1 class="c1">用户登录</h1>
     <form method="post" action="/login">
-        用户名：<input type="text" name="username">
-        密码：<input type="text" name="password">
+        <div class="c2">
+            用户名：<input type="text" name="username">
+        </div>
+        <div class="c2">
+            密码：<input type="text" name="password">
+        </div>
+
         <input type="submit" value="提交">
     </form>
 
