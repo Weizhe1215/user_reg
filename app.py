@@ -20,9 +20,20 @@ def register():
         print(user, pwd, gender, hobby_list, city, skill_list, more)
         return "注册成功"
 
-@app.route()
 
+# 用户登录
+@app.route('/login',methods=['GET',"POST"])
+def login():
+    if request.method == 'GET':
+        return render_template('login.html')
+    else:
+        print(request.form)
+        user
+        return '登录成功'
 
-
+# 公司首页
+@app.route('/index', methods=['GET'])
+def index():
+    return render_template('index.html')
 if __name__ == '__main__':
     app.run()
