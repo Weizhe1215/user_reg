@@ -4,16 +4,24 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-# 定义网址后缀
-@app.route('/register')
+# 注册界面
+@app.route('/register',methods=['GET','POST'])
 def register():
-    return render_template('register.html')
+    if request.method == "GET":
+        return render_template('register.html')
+    else:
+        user = request.form.get("user")
+        pwd = request.form.get("pwd")
+        gender = request.form.get("gender")
+        hobby_list = request.form.getlist("hobby")  # 多个input
+        city = request.form.get("city")
+        skill_list = request.form.getlist('skill')
+        more = request.form.get('more')
+        print(user, pwd, gender, hobby_list, city, skill_list, more)
+        return "注册成功"
 
+@app.route()
 
-@app.route('/do/reg')
-def do_register():
-    print(request.args)
-    return "注册成功"
 
 
 if __name__ == '__main__':
